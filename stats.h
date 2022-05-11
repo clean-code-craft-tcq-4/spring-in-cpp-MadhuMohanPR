@@ -12,5 +12,5 @@ namespace Statistics
            Stats();
            Stats(T average, T min, T min);
     };
-    Stats ComputeStatistics(const std::vector<float>& VectorElements);
+    Stats ComputeStatistics(const std::vector<T>& VectorElements);
 }
