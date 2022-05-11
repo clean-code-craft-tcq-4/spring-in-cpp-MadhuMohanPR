@@ -2,7 +2,7 @@
 
 namespace Statistics 
 {
-    template <typename T=double>
+   /* template <typename T=double>
     class Stats
     {
         public:
@@ -11,6 +11,16 @@ namespace Statistics
            T Min;
            Stats();
            Stats(T average, T max, T min);
+    };*/
+
+    class Stats
+    {
+        public:
+           float Average;
+           float Max;
+           float Min;
+           Stats();
+           Stats(float average, float max, float min);
     };
-    Stats ComputeStatistics(const std::vector<T>& VectorElements);
+    Stats ComputeStatistics(const std::vector<float>& VectorElements);
 }
