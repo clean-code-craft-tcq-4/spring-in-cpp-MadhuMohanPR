@@ -10,7 +10,7 @@ namespace Statistics
            T Max;
            T Min;
            Stats();
-           Stats(T average, T min, T min);
+           Stats(T average, T max, T min);
     };
     Stats ComputeStatistics(const std::vector<T>& VectorElements);
 }
