@@ -5,9 +5,9 @@
 #include<numeric>
 using namespace std;
 
+template <typename T=double>
 namespace Statistics 
 {
-    template <typename T=double>
     class Stats
     {
         public:
