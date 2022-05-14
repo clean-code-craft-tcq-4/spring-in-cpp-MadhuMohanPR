@@ -20,15 +20,7 @@ namespace Statistics
            Stats(T avrg, T max, T min);
     };
 
-    /*class Stats
-    {
-        public:
-           float Average;
-           float Maximum;
-           float Minimum;
-           Stats();
-           Stats(float avrg, float max, float min);
-    };*/
     template<class T1>
+    template <typename T=double>
     Stats<T1> ComputeStatistics(const std::vector<T>& vectorElements);
 }
