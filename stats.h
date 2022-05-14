@@ -22,10 +22,10 @@ namespace Statistics
     {
         public:
            float Average;
-           float Max;
-           float Min;
+           float Maximum;
+           float Minimum;
            Stats();
-           Stats(float average, float max, float min);
+           Stats(float avrg, float max, float min);
     };
-    Stats ComputeStatistics(const std::vector<float>& VectorElements);
+    Stats ComputeStatistics(const std::vector<float>& vectorElements);
 }
