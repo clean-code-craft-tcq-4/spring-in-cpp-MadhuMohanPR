@@ -14,7 +14,9 @@ namespace Statistics
            T Average;
            T Maximum;
            T Minimum;
+           const std::vector<T>& vNumb;
            Stats();
+           Stats(const std::vector<T>& vectorElements);
            Stats(T avrg, T max, T min);
     };
 
