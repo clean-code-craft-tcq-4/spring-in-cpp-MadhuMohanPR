@@ -3,23 +3,23 @@
 #include<bits/stdc++.h>
 using namespace Statistics;
 
-template <class T'>
+template <class T1>
 template <typename T=double>
-Statistics::Stats<T>::Stats()
+Statistics::Stats<T1>::Stats()
 {
 }
 
-Statistics::Stats<T'>::Stats(const std::vector<T>& vectorElements) : vNumb({})
+Statistics::Stats<T1>::Stats(const std::vector<T>& vectorElements) : vNumb({})
 {
     vNumb.assign(vectorElements.begin(), vectorElements.end());
     Statistics::ComputeStatistics(vectorElements);
 }
 
-Statistics::Stats<T'>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
+Statistics::Stats<T1>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
 {
 }
 
-Statistics::Stats<T'> Statistics::ComputeStatistics(const std::vector<T>& vectorElements)
+Statistics::Stats<T1> Statistics::ComputeStatistics(const std::vector<T>& vectorElements)
 {
     //Implement statistics here
     Statistics::Stats<T> vElements;
