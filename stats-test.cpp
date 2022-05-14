@@ -12,12 +12,12 @@ TEST_CASE("reports average, minimum and maximum")
     REQUIRE(std::abs(computedStats.Maximum - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.Minimum - 1.5) < epsilon);*/
     
-    Statistics::Stat<float> computedvalues;
-    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues{1.5, 8.9, 3.1, 4.5});
+    Statistics::Stats<float> computedvalues = {1.5, 8.9, 3.1, 4.5};
+    Statistics::Stats<float> computedstats = Statistics::ComputeStatistics(computedvalues);
     float epsilon = 0.001;
-    REQUIRE(std::abs(computedstats.average - 4.525) < epsilon);
-    REQUIRE(std::abs(computedstats.Max - 8.9) < epsilon);
-    REQUIRE(std::abs(computedstats.Min - 1.5) < epsilon);
+    REQUIRE(std::abs(computedstats.Average - 4.525) < epsilon);
+    REQUIRE(std::abs(computedstats.Maximum - 8.9) < epsilon);
+    REQUIRE(std::abs(computedstats.Minimum - 1.5) < epsilon);
 }
 
 TEST_CASE("average is NaN for empty array")
