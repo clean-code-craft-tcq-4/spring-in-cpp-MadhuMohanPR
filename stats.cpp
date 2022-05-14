@@ -1,20 +1,19 @@
 #include "stats.h"
+#include<cmath>
 #include<bits/stdc++.h>
 
-using namespace Statistics;
-
-Statistics::Stats::Stats()
+template<typename T> Statistics::Stats<>::Stats()
 {
 }
 
-Statistics::Stats::Stats(float avrg, float max, float min) : Average(avrg), Maximum(max), Minimum(min)
+template<typename T> Statistics::Stats<T, T, T>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
 {
 }
 
-Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vectorElements)
+template<typename T> Statistics::Stats<T> Statistics::ComputeStatistics(const std::vector<T>& vectorElements)
 {
     //Implement statistics here
-    Statistics::Stats vElements;
+    Statistics::Stats<T> vElements;
     if(vectorElements.size()==0)
     {
        vElements.Average = NAN;
@@ -25,7 +24,7 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vector
     {
        vElements.Maximum = *max_element(vectorElements.begin(), vectorElements.end());
        vElements.Minimum = *min_element(vectorElements.begin(), vectorElements.end());
-       float Add         = accumulate(vectorElements.begin(), vectorElements.end() , 0);
+       T Add             = accumulate(vectorElements.begin(), vectorElements.end() , 0);
        vElements.Average = (Add/vectorElements.size());
     }
     return vElements;
