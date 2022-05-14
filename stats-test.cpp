@@ -3,7 +3,6 @@
 #include "catch.hpp"
 #include "stats.h"
 #include <cmath>
-using namespace Statistics;
 
 TEST_CASE("reports average, minimum and maximum")
 {
@@ -14,7 +13,7 @@ TEST_CASE("reports average, minimum and maximum")
     REQUIRE(std::abs(computedStats.Minimum - 1.5) < epsilon);*/
     
     const std::vector<float> computedvalues;
-    computedvalues.vNumb.assign({1.5, 8.9, 3.1, 4.5});
+    computedvalues.assign({1.5, 8.9, 3.1, 4.5});
     auto computedstats = Statistics::ComputeStatistics(computedvalues.vNumb);
     float epsilon = 0.001;
     REQUIRE(std::abs(computedstats.Average - 4.525) < epsilon);
