@@ -6,8 +6,7 @@
 using namespace std;
 
 template <class T1, class T2>
-namespace Statistics 
-{
+namespace Statistics {
     class Stats
     {
         public:
