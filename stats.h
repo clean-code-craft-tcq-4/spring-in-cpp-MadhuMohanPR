@@ -5,9 +5,9 @@
 #include<numeric>
 using namespace std;
 
+template <typename T=double>
 namespace Statistics 
 {
-    template <typename T=double>
     class Stats
     {
         public:
@@ -20,7 +20,6 @@ namespace Statistics
            Stats(T avrg, T max, T min);
     };
 
-    template<class T1>
-    template <typename T=double>
-    Stats<T1> ComputeStatistics(const std::vector<T>& vectorElements);
+
+     template<class T1> Stats<T1> ComputeStatistics(const std::vector<T>& vectorElements);
 }
