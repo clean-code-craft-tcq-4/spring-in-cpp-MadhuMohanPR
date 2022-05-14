@@ -2,15 +2,15 @@
 #include<cmath>
 #include<bits/stdc++.h>
 
-template<typename T> Statistics::Stats<>::Stats()
+Statistics::Stats<T>::Stats()
 {
 }
 
-template<typename T> Statistics::Stats<T, T, T>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
+Statistics::Stats<T>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
 {
 }
 
-template<typename T> Statistics::Stats<T> Statistics::ComputeStatistics(const std::vector<T>& vectorElements)
+Statistics::Stats<T> Statistics::ComputeStatistics(const std::vector<T>& vectorElements)
 {
     //Implement statistics here
     Statistics::Stats<T> vElements;
