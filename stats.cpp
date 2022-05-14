@@ -1,7 +1,9 @@
 #include "stats.h"
 #include<cmath>
 #include<bits/stdc++.h>
+using namespace Statistics;
 
+template <typename T=double>
 Statistics::Stats<T>::Stats()
 {
 }
@@ -9,7 +11,7 @@ Statistics::Stats<T>::Stats()
 Statistics::Stats<T>::Stats(const std::vector<T>& vectorElements) : vNumb({})
 {
     vNumb.assign(vectorElements.begin(), vectorElements.end());
-    Statistics::ComputeStatistics(vectorElements)
+    Statistics::ComputeStatistics(vectorElements);
 }
 
 Statistics::Stats<T>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
