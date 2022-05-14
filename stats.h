@@ -1,11 +1,13 @@
+#include<iostream>
 #include <vector>
+#include<math.h>
+#include<bits/stdc++.h>
 #include<numeric>
-#include <cmath>
 using namespace std;
 
 namespace Statistics 
 {
-   /* template <typename T=double>
+    template <typename T=double>
     class Stats
     {
         public:
@@ -14,9 +16,9 @@ namespace Statistics
            T Min;
            Stats();
            Stats(T average, T max, T min);
-    };*/
+    };
 
-    class Stats
+    /*class Stats
     {
         public:
            float Average;
@@ -24,6 +26,7 @@ namespace Statistics
            float Minimum;
            Stats();
            Stats(float avrg, float max, float min);
-    };
-    Stats ComputeStatistics(const std::vector<float>& vectorElements);
+    };*/
+    template<typename T=double>
+    Stats<T> ComputeStatistics(const std::vector<T>& vectorElements);
 }
