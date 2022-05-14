@@ -3,21 +3,21 @@
 #include<bits/stdc++.h>
 using namespace Statistics;
 
-template <class T1> Statistics::Stats<T1>::Stats()
+Statistics::Stats<T1>::Stats()
 {
 }
 
-template <typename T=double> template <class T1> Statistics::Stats<T1>::Stats(const std::vector<T>& vectorElements) : vNumb({})
+Statistics::Stats<T1>::Stats(const std::vector<T2>& vectorElements) : vNumb({})
 {
     vNumb.assign(vectorElements.begin(), vectorElements.end());
     Statistics::ComputeStatistics(vectorElements);
 }
 
-template <typename T=double> template <class T1> Statistics::Stats<T1>::Stats(T avrg, T max, T min) : Average(avrg), Maximum(max), Minimum(min)
+Statistics::Stats<T1>::Stats(T2 avrg, T2 max, T2 min) : Average(avrg), Maximum(max), Minimum(min)
 {
 }
 
-template <typename T=double> template <class T1> Statistics::Stats<T1> Statistics::ComputeStatistics(const std::vector<T>& vectorElements)
+Statistics::Stats<T1> Statistics::ComputeStatistics(const std::vector<T2>& vectorElements)
 {
     //Implement statistics here
     Statistics::Stats<T1> vElements;
@@ -31,7 +31,7 @@ template <typename T=double> template <class T1> Statistics::Stats<T1> Statistic
     {
        vElements.Maximum = *max_element(vectorElements.begin(), vectorElements.end());
        vElements.Minimum = *min_element(vectorElements.begin(), vectorElements.end());
-       T Add             = accumulate(vectorElements.begin(), vectorElements.end() , 0);
+       T2 Add             = accumulate(vectorElements.begin(), vectorElements.end() , 0);
        vElements.Average = (Add/vectorElements.size());
     }
     return vElements;
