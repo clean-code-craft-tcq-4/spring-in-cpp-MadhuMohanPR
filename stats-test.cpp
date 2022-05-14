@@ -19,6 +19,9 @@ TEST_CASE("average is NaN for empty array") {
     //NAN (not-a-number), as defined in math.h
     
     //Design the REQUIRE statement here.
+    REQUIRE(isnan(computedStats.Average));
+    REQUIRE(isnan(computedStats.Max));
+    REQUIRE(isnan(computedStats.Min));
     //Use http://www.cplusplus.com/reference/cmath/isnan/
 }
 
