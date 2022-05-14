@@ -5,20 +5,20 @@
 #include<numeric>
 using namespace std;
 
-template <typename T=double>
+template <class T1, class T2>
 namespace Statistics 
 {
     class Stats
     {
         public:
-           T Average;
-           T Maximum;
-           T Minimum;
-           const std::vector<T>& vNumb;
+           T2 Average;
+           T2 Maximum;
+           T2 Minimum;
+           const std::vector<T2>& vNumb;
            Stats();
-           Stats(const std::vector<T>& vectorElements);
-           Stats(T avrg, T max, T min);
+           Stats(const std::vector<T2>& vectorElements);
+           Stats(T2 avrg, T2 max, T2 min);
     };
 
-     template<class T1> Stats<T1> ComputeStatistics(const std::vector<T>& vectorElements);
+    Stats<T1> ComputeStatistics(const std::vector<T2>& vectorElements);
 }
