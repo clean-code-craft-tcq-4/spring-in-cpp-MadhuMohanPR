@@ -29,6 +29,6 @@ namespace Statistics
            Stats();
            Stats(float avrg, float max, float min);
     };*/
-    template<typename T=double>
-    Stats<T> ComputeStatistics(const std::vector<T>& vectorElements);
+    template<class T'>
+    Stats<T'> ComputeStatistics(const std::vector<T>& vectorElements);
 }
