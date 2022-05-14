@@ -14,7 +14,7 @@ TEST_CASE("reports average, minimum and maximum")
     
     const std::vector<float> computedvalues;
     computedvalues.assign({1.5, 8.9, 3.1, 4.5});
-    auto computedstats = Statistics::ComputeStatistics(computedvalues.vNumb);
+    auto computedstats = Statistics::ComputeStatistics(computedvalues);
     float epsilon = 0.001;
     REQUIRE(std::abs(computedstats.Average - 4.525) < epsilon);
     REQUIRE(std::abs(computedstats.Maximum - 8.9) < epsilon);
