@@ -2,8 +2,7 @@
 #include<cmath>
 #include<bits/stdc++.h>
 
-namespace Statistics
-{
+namespace Statistics {
    Stats::Stats()
    {
    }
