@@ -4,21 +4,21 @@
 
 namespace Statistics
 {
-   Stats<T1>::Stats()
+   Stats::Stats()
    {
    }
 
-   Stats<T1>::Stats(const std::vector<T2>& vectorElements) : vNumb({})
+   Stats::Stats(const std::vector<T2>& vectorElements) : vNumb({})
    {
       vNumb.assign(vectorElements.begin(), vectorElements.end());
       Statistics::ComputeStatistics(vectorElements);
    }
 
-   Stats<T1>::Stats(T2 avrg, T2 max, T2 min) : Average(avrg), Maximum(max), Minimum(min)
+   Stats::Stats(T2 avrg, T2 max, T2 min) : Average(avrg), Maximum(max), Minimum(min)
    {
    }
 
-   Stats<T1> Statistics::ComputeStatistics(const std::vector<T2>& vectorElements)
+   Stats Statistics::ComputeStatistics(const std::vector<T2>& vectorElements)
    {
        //Implement statistics here
        Statistics::Stats<T1> vElements;
