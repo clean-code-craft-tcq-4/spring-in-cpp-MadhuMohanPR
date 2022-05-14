@@ -2,14 +2,17 @@
 #include<cmath>
 #include<bits/stdc++.h>
 
-Statistics::Stats()
-{
-}
-Statistics::Stats(float avrg,float max,float min):Average(avrg),Maximum(max),Minimum(min)
+namespace Statistics {
+
+Stats::Stats()
 {
 }
 
-Stats Statistics::ComputeStatistics(const std::vector<float>& vectorElements)
+Stats::Stats(float avrg,float max,float min):Average(avrg),Maximum(max),Minimum(min)
+{
+}
+
+Stats Stats::ComputeStatistics(const std::vector<float>& vectorElements)
 {
     //Implement statistics here
     Stats vElements;
@@ -26,4 +29,6 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& vectorElements)
     vElements.Minimum = *min_element(vectorElements.begin(),vectorElements.end());
 
     return vElements;
+}
+
 }
