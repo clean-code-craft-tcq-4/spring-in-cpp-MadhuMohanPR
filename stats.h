@@ -1,5 +1,6 @@
 #include <vector>
 #include<numeric>
+#include <cmath>
 using namespace std;
 
 namespace Statistics 
