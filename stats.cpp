@@ -2,6 +2,7 @@
 #include<cmath>
 #include<bits/stdc++.h>
 
+template <class T1, class T2>
 namespace Statistics {
    Stats<T1>::Stats()
    {
