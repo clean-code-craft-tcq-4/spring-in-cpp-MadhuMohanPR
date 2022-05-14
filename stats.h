@@ -12,10 +12,10 @@ namespace Statistics
     {
         public:
            T Average;
-           T Max;
-           T Min;
+           T Maximum;
+           T Minimum;
            Stats();
-           Stats(T average, T max, T min);
+           Stats(T avrg, T max, T min);
     };
 
     /*class Stats
