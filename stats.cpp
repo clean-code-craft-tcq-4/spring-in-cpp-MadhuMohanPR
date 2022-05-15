@@ -1,6 +1,4 @@
 #include "stats.h"
-#include<cmath>
-#include<bits/stdc++.h>
 
 template <class T1, class T2>
 namespace Statistics {
