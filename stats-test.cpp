@@ -13,9 +13,9 @@ TEST_CASE("reports average, minimum and maximum")
     REQUIRE(std::abs(computedStats.Average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.Maximum - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.Minimum - 1.5) < epsilon);*/
-    float ArrNumb[SIZE] = {1.5, 8.9, 3.1, 4.5};
-    const std::vector<float> computedvalues;
-    computedvalues.assign(ArrNumb, ArrNumb + SIZE);
+    //float ArrNumb[SIZE] = {1.5, 8.9, 3.1, 4.5};
+    std::vector<float> computedvalues;
+    computedvalues.assign({1.5, 8.9, 3.1, 4.5});
     auto computedstats = Statistics::ComputeStatistics(computedvalues);
     float epsilon = 0.001;
     REQUIRE(std::abs(computedstats.Average - 4.525) < epsilon);
