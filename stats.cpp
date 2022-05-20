@@ -1,4 +1,5 @@
 #include "stats.h"
+#include <numeric>
 
 namespace Statistics {
 Stats ComputeStatistics(const std::vector<double>& vNumbers) {
