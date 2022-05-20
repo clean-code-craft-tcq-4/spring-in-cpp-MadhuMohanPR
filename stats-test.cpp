@@ -22,7 +22,7 @@ TEST_CASE("average is NaN for empty array") {
 
     //Design the REQUIRE statement here.
     std::vector<double> vNumbers;
-    Statistics::Stats computedStats = Statistics::ComputeStatistics(vElements);
+    Statistics::Stats computedStats = Statistics::ComputeStatistics(vNumbers);
     REQUIRE(isnan(computedStats.average));
     REQUIRE(isnan(computedStats.max));
     REQUIRE(isnan(computedStats.min));
