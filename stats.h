@@ -6,8 +6,9 @@
 #include<cmath>
 #include<bits/stdc++.h>
 #include<numeric>
-#include "Statistics.h"
+
 using namespace std;
+using namespace Statistics;
 
 template <class T2>
 namespace Statistics {
