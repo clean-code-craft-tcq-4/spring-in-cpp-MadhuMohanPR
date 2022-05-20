@@ -8,7 +8,7 @@
 #include<numeric>
 using namespace std;
 
-template <class T1, class T2>
+template <class T2>
 namespace Statistics {
     class Stats
     {
@@ -22,6 +22,5 @@ namespace Statistics {
            Stats(T2 avrg, T2 max, T2 min);
     };
 
-    Stats<T1> ComputeStatistics(const std::vector<T2>& vectorElements);
 }
 #endif
