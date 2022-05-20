@@ -7,7 +7,7 @@
 #include <vector>
 
 class stats;
-template <class T1, class T2>
+template <class T1, typename T2>
 namespace Statistics{
   stats<T1> ComputeStatistics(const std::vector<T2>& vectorElements);
 }
