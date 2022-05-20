@@ -1,4 +1,7 @@
+#include <iostream>
+#include <bits/stdc++.h>
 #include <vector>
+#include<cmath>
 
 namespace Statistics {
     class Stats
