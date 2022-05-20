@@ -1,3 +1,6 @@
+#ifndef STATS_H
+#define STATS_H
+
 #include<iostream>
 #include <vector>
 #include<cmath>
@@ -21,3 +24,4 @@ namespace Statistics {
 
     Stats<T1> ComputeStatistics(const std::vector<T2>& vectorElements);
 }
+#endif
