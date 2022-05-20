@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 #include <vector>
 #include<cmath>
+using namespace std;
 
 namespace Statistics {
     class Stats
