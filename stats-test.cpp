@@ -6,10 +6,10 @@
 
 TEST_CASE("reports average, minimum and maximum") {
     std::vector<double> computedvalues;
-    computedvalues.assign({1.5, 8.9, 3.1, 4.5});
+    computedvalues.assign({1.525, 8.925, 3.125, 4.525});
     Statistics::Stats computedStats = Statistics::ComputeStatistics(computedvalues);
-    float epsilon = 0.001;
-    REQUIRE(std::abs(computedStats.average - 4.5) < epsilon);
+    double epsilon = 0.001;
+    REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.min - 1.5) < epsilon);
 }
