@@ -2,14 +2,14 @@
 
 #include "catch.hpp"
 #include "stats.h"
-
 #include <cmath>
+template <typename T>
 
 TEST_CASE("reports average, minimum and maximum") {
-    std::vector<float> computedvalues;
+    std::vector<T> computedvalues;
     computedvalues.assign({1.5, 8.9, 3.1, 4.5});
     Statistics::Stats computedStats = Statistics::ComputeStatistics(computedvalues);
-    float epsilon = 0.001;
+    T epsilon = 0.001;
     REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.min - 1.5) < epsilon);
@@ -20,7 +20,7 @@ TEST_CASE("average is NaN for empty array") {
     //NAN (not-a-number), as defined in math.h
 
     //Design the REQUIRE statement here.
-    std::vector<float> vNumbers;
+    std::vector<T> vNumbers;
     Statistics::Stats computedStats = Statistics::ComputeStatistics(vNumbers);
     REQUIRE(isnan(computedStats.average));
     REQUIRE(isnan(computedStats.max));
