@@ -8,9 +8,9 @@ namespace Statistics {
     class Stats
     {
         public:
-           const double average;
-           const double max;
-           const double min;
+           double average;
+           double max;
+           double min;
     };
     Stats ComputeStatistics(const std::vector<double>& vNumbers);
 }
