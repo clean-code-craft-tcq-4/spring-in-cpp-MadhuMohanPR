@@ -5,10 +5,10 @@
 #include <cmath>
 
 TEST_CASE("reports average, minimum and maximum") {
-    std::vector<double> computedvalues;
+    std::vector<float> computedvalues;
     computedvalues.assign({1.525, 8.925, 3.125, 4.525});
     Statistics::Stats computedStats = Statistics::ComputeStatistics(computedvalues);
-    double epsilon = 0.001;
+    float epsilon = 0.001;
     REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.max - 8.925) < epsilon);
     REQUIRE(std::abs(computedStats.min - 1.525) < epsilon);
@@ -19,7 +19,7 @@ TEST_CASE("average is NaN for empty array") {
     //NAN (not-a-number), as defined in math.h
 
     //Design the REQUIRE statement here.
-    std::vector<double> vNumbers;
+    std::vector<float> vNumbers;
     Statistics::Stats computedStats = Statistics::ComputeStatistics(vNumbers);
     REQUIRE(isnan(computedStats.average));
     REQUIRE(isnan(computedStats.max));
