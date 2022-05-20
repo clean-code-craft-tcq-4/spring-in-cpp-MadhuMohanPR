@@ -10,8 +10,8 @@ TEST_CASE("reports average, minimum and maximum") {
     Statistics::Stats computedStats = Statistics::ComputeStatistics(computedvalues);
     double epsilon = 0.001;
     REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
-    REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
-    REQUIRE(std::abs(computedStats.min - 1.5) < epsilon);
+    REQUIRE(std::abs(computedStats.max - 8.925) < epsilon);
+    REQUIRE(std::abs(computedStats.min - 1.525) < epsilon);
 }
 
 TEST_CASE("average is NaN for empty array") {
