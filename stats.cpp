@@ -1,7 +1,7 @@
 #include "stats.h"
 
 namespace Statistics {
-Stats Statistics::ComputeStatistics(const std::vector<double>& vNumbers) {
+Stats ComputeStatistics(const std::vector<double>& vNumbers) {
     //Implement statistics here
     Stats vElements;
     if(vNumbers.size()==0)
