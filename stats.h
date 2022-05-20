@@ -4,13 +4,14 @@
 #include<cmath>
 using namespace std;
 
+template <typename T>
 namespace Statistics {
     class Stats
     {
         public:
-           float average;
-           float max;
-           float min;
+           T average;
+           T max;
+           T min;
     };
-    Stats ComputeStatistics(const std::vector<float>& vNumbers);
+    Stats ComputeStatistics(const std::vector<T>& vNumbers);
 }
