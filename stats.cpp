@@ -2,24 +2,24 @@
 
 template <class T1, class T2>
 namespace Statistics {
-   Stats<T1>::Stats()
+   stats<T1>::stats()
    {
    }
 
-   Stats<T1>::Stats(const std::vector<T2>& vectorElements) : vNumb({})
+   stats<T1>::stats(const std::vector<T2>& vectorElements) : vNumb({})
    {
       vNumb.assign(vectorElements.begin(), vectorElements.end());
       Statistics::ComputeStatistics(vectorElements);
    }
 
-   Stats<T1>::Stats(T2 avrg, T2 max, T2 min) : Average(avrg), Maximum(max), Minimum(min)
+   stats<T1>::stats(T2 avrg, T2 max, T2 min) : Average(avrg), Maximum(max), Minimum(min)
    {
    }
 
-   Stats<T1> Statistics::ComputeStatistics(const std::vector<T2>& vectorElements)
+   stats<T1> Statistics::ComputeStatistics(const std::vector<T2>& vectorElements)
    {
        //Implement statistics here
-       Statistics::Stats<T1> vElements;
+       Statistics::stats<T1> vElements;
        if(vectorElements.size()==0)
        {
           vElements.Average = NAN;
