@@ -5,8 +5,8 @@
 #include<numeric>
 using namespace std;
 
-template <class T1, class T2>
 namespace Statistics {
+template <class T1, class T2>
     class Stats
     {
         public:
