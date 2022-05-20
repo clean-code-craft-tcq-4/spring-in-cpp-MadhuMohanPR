@@ -1,7 +1,8 @@
 #include "stats.h"
 
+template <typename T>
 namespace Statistics {
-Stats ComputeStatistics(const std::vector<float>& vNumbers) {
+Stats ComputeStatistics(const std::vector<T>& vNumbers) {
     //Implement statistics here
     Stats vElements;
     if(vNumbers.size()==0)
