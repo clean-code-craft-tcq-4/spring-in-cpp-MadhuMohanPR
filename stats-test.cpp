@@ -8,7 +8,7 @@
 TEST_CASE("reports average, minimum and maximum") {
     std::vector<double> computedvalues;
     computedvalues.assign({1.5, 8.9, 3.1, 4.5});
-    Stats computedStats = Statistics::ComputeStatistics(computedvalues);
+    Statistics::Stats computedStats = Statistics::ComputeStatistics(computedvalues);
     float epsilon = 0.001;
     REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
@@ -22,7 +22,7 @@ TEST_CASE("average is NaN for empty array") {
 
     //Design the REQUIRE statement here.
     std::vector<double> vNumbers;
-    Stats computedStats = Statistics::ComputeStatistics(vElements);
+    Statistics::Stats computedStats = Statistics::ComputeStatistics(vElements);
     REQUIRE(isnan(computedStats.average));
     REQUIRE(isnan(computedStats.max));
     REQUIRE(isnan(computedStats.min));
