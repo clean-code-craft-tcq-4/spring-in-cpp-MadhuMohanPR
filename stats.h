@@ -10,16 +10,16 @@ using namespace std;
 
 template <class T2>
 namespace Statistics {
-    class Stats
+    class stats
     {
         public:
            T2 Average;
            T2 Maximum;
            T2 Minimum;
            const std::vector<T2>& vNumb;
-           Stats();
-           Stats(const std::vector<T2>& vectorElements);
-           Stats(T2 avrg, T2 max, T2 min);
+           stats();
+           stats(const std::vector<T2>& vectorElements);
+           stats(T2 avrg, T2 max, T2 min);
     };
 
 }
