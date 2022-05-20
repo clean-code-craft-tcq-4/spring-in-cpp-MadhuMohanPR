@@ -12,5 +12,5 @@ namespace Statistics {
            double max;
            double min;
     };
-    Stats ComputeStatistics(const std::vector<double>& );
+    Stats ComputeStatistics(const std::vector<double>& vNumbers);
 }
