@@ -1,5 +1,6 @@
 #include "stats.h"
 #include <numeric>
+//#include<algorithm>
 
 namespace Statistics {
 Stats ComputeStatistics(const std::vector<float>& vNumbers) {
@@ -19,4 +20,30 @@ Stats ComputeStatistics(const std::vector<float>& vNumbers) {
     }
     return vElements;
 }
+} // namespace Statistics
+
+EmailAlert::EmailAlert():emailSent(false)
+{}
+LEDAlert::LEDAlert():ledGlows(false)
+{}
+StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters):emailAlert(NULL), ledAlert(NULL)
+{
+    maxThreshold = MaxThreshold;
+    emailAlertPTR = Alerters.at(0);
+    ledAlertPTR   = Alerters.at(1);
+    
+    //alerters.assign(Alerters.begin(), Alerters.end());
+}
+void StatsAlerter::checkAndAlert(const std::vector<float>& VctrNumbers)
+{
+    float max     = *max_element(VctrNumbers.begin(), VctrNumbers.end());
+    if(max > maxThreshold)
+    {
+        emailAlertPTR->emailsent = true;
+        ledAlertPTR->ledGlows    = true;
+    }
+    else
+    {
+        cout << "max is less than Threshold" <<endl;
+    }
 }
