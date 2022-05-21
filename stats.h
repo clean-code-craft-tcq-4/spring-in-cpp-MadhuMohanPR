@@ -4,6 +4,8 @@
 #include<cmath>
 using namespace std;
 
+typedef int IAlerter;
+
 namespace Statistics {
     class Stats
     {
@@ -14,3 +16,26 @@ namespace Statistics {
     };
     Stats ComputeStatistics(const std::vector<float>& vNumbers);
 }
+
+class EmailAlert
+{
+    public:
+       EmailAlert();
+       bool emailSent;
+};
+class LEDAlert
+{
+    public:
+       LEDAlert();
+       bool ledGlows;
+};
+class StatsAlerter
+{
+    public:
+       float maxThreshold;
+       IAlerter* emailAlertPTR;
+       IAlerter* ledAlertPTR;
+       //std::vector<IAlerter*> alerters;
+       StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters);
+       void checkAndAlert(const std::vector<float>& VctrNumbers);
+};
