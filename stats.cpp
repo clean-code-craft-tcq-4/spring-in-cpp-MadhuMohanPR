@@ -39,8 +39,8 @@ void StatsAlerter::checkAndAlert(const std::vector<float>& VctrNumbers)
     float max     = *max_element(VctrNumbers.begin(), VctrNumbers.end());
     if(max > maxThreshold)
     {
-        (*emailAlertPTR).emailsent = true;
-        (*ledAlertPTR).ledGlows    = true;
+        this->(*emailAlertPTR).emailsent = true;
+        //(*ledAlertPTR).ledGlows    = true;
     }
     else
     {
