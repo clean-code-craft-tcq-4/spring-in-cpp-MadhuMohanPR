@@ -31,8 +31,9 @@ IAlerter::IAlerter()
 StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters): IAlertPTR(NULL) //:emailAlertPTR(NULL), ledAlertPTR(NULL)
 {
     maxThreshold = MaxThreshold;
-    IAlertPTR->emailAlert = Alerters.at(0);
-    IAlertPTR->ledAlert = Alerters.at(1);
+    IAlertPTR = Alerters.at(0);
+    //IAlertPTR->emailAlert = Alerters.at(0);
+    //IAlertPTR->ledAlert = Alerters.at(1);
     //IAlertPTR->first = Alerters[0]->first;
     //IAlertPTR->second = Alerters[0]->second;
     //emailAlertPTR = Alerters.at(0);
@@ -42,11 +43,14 @@ StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters):
 }
 void StatsAlerter::checkAndAlert(const std::vector<float>& VctrNumbers)
 {
+    //float max = *VctrNumbers.rbegin();
     float max     = *max_element(VctrNumbers.begin(), VctrNumbers.end());
     if(max > maxThreshold)
     {
-        IAlertPTR->emailAlert->emailSent = true;
-        IAlertPTR->ledAlert->ledGlows = true;
+        IAlertPTR->emailAlert.emailSent = true;
+        IAlertPTR->ledAlert.ledGlows = true;
+        //IAlertPTR->emailAlert->emailSent = true;
+        //IAlertPTR->ledAlert->ledGlows = true;
         //IAlertPTR->first->emailSent = true;
         //IAlertPTR->second->ledGlows = true;
         //this->*emailAlertPTR.emailSent = true;
