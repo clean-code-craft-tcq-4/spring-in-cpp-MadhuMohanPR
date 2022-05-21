@@ -19,27 +19,30 @@ struct EmailAlert
 {
     public:
        EmailAlert();
-       //bool emailSent;
-       unsigned int emailSent:1 ;
+       bool emailSent;
 };
 struct LEDAlert
 {
     public:
        LEDAlert();
-       //bool ledGlows;
-       unsigned int ledGlows:1 ;
+       bool ledGlows;
 };
 
-typedef unsigned int IAlerter;
+struct IAlerter
+{
+   EmailAlert emailAlert;
+   LEDAlert ledAlert;
+};
+//typedef unsigned int IAlerter;
 //typedef pair<EmailAlert*, LEDAlert*> IAlerter;
 
 class StatsAlerter
 {
     public:
        float maxThreshold;
-       //IAlerter* IAlertPTR;
-       IAlerter* emailAlertPTR;
-       IAlerter* ledAlertPTR;
+       IAlerter* IAlertPTR;
+       //IAlerter* emailAlertPTR;
+       //IAlerter* ledAlertPTR;
        //std::vector<IAlerter*> alerters;
        StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters);
        void checkAndAlert(const std::vector<float>& VctrNumbers);
