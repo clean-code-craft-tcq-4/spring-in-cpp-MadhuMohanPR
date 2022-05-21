@@ -17,19 +17,18 @@ namespace Statistics {
 
 struct EmailAlert
 {
-    public:
-       EmailAlert();
-       bool emailSent;
+    EmailAlert();
+    bool emailSent;
 };
 struct LEDAlert
 {
-    public:
-       LEDAlert();
-       bool ledGlows;
+    LEDAlert();
+    bool ledGlows;
 };
 
 struct IAlerter
 {
+   IAlerter();
    EmailAlert emailAlert;
    LEDAlert ledAlert;
 };
