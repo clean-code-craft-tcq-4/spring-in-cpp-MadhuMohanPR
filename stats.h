@@ -28,15 +28,16 @@ class LEDAlert
        bool ledGlows;
 };
 
-typedef pair<EmailAlert*, LEDAlert*> IAlerter;
+typedef int IAlerter;
+//typedef pair<EmailAlert*, LEDAlert*> IAlerter;
 
 class StatsAlerter
 {
     public:
        float maxThreshold;
-       IAlerter* IAlertPTR;
-       //IAlerter* emailAlertPTR;
-       //IAlerter* ledAlertPTR;
+       //IAlerter* IAlertPTR;
+       IAlerter* emailAlertPTR;
+       IAlerter* ledAlertPTR;
        //std::vector<IAlerter*> alerters;
        StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters);
        void checkAndAlert(const std::vector<float>& VctrNumbers);
