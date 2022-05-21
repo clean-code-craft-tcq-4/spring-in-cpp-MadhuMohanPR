@@ -34,9 +34,10 @@ class StatsAlerter
 {
     public:
        float maxThreshold;
+       IAlerter* IAlertPTR;
        //IAlerter* emailAlertPTR;
        //IAlerter* ledAlertPTR;
-       std::vector<IAlerter*> alerters;
+       //std::vector<IAlerter*> alerters;
        StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters);
        void checkAndAlert(const std::vector<float>& VctrNumbers);
 };
