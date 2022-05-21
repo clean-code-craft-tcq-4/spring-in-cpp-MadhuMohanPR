@@ -15,14 +15,14 @@ namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& vNumbers);
 }
 
-class EmailAlert
+struct EmailAlert
 {
     public:
        EmailAlert();
        //bool emailSent;
        unsigned int emailSent:1 ;
 };
-class LEDAlert
+struct LEDAlert
 {
     public:
        LEDAlert();
