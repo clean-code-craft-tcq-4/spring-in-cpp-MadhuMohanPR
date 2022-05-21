@@ -3,6 +3,7 @@
 #include "catch.hpp"
 #include "stats.h"
 #include <cmath>
+using std::make_pair;
 
 TEST_CASE("reports average, minimum and maximum") {
     std::vector<float> computedvalues;
@@ -32,7 +33,7 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     LEDAlert ledAlert;
     //std::vector<IAlerter*> alerters = {&emailAlert, &ledAlert};
     std::vector<IAlerter*> alerters;
-    alerters.assign(make_pair(&emailAlert,&ledAlert));
+    alerters.push_back(make_pair(&emailAlert,&ledAlert));
     const float maxThreshold = 10.2;
     StatsAlerter statsAlerter(maxThreshold, alerters);
     statsAlerter.checkAndAlert({99.8, 34.2, 4.5, 6.7});
