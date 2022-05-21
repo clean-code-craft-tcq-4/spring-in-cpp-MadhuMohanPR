@@ -4,8 +4,6 @@
 #include<cmath>
 using namespace std;
 
-typedef int IAlerter;
-
 namespace Statistics {
     class Stats
     {
@@ -29,6 +27,9 @@ class LEDAlert
        LEDAlert();
        bool ledGlows;
 };
+
+typedef pair<EmailAlert, LEDAlert> IAlerter;
+
 class StatsAlerter
 {
     public:
