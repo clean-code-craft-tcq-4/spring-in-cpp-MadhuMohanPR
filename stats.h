@@ -29,8 +29,8 @@ struct LEDAlert
 struct IAlerter
 {
    IAlerter();
-   EmailAlert* emailAlert;
-   LEDAlert* ledAlert;
+   EmailAlert emailAlert;
+   LEDAlert ledAlert;
 };
 //typedef unsigned int IAlerter;
 //typedef pair<EmailAlert*, LEDAlert*> IAlerter;
