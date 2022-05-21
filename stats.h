@@ -28,7 +28,7 @@ class LEDAlert
        bool ledGlows;
 };
 
-typedef pair<EmailAlert*, LEDAlert*> IAlerter;
+typedef <pair<EmailAlert*, LEDAlert*> IAlerter;
 
 class StatsAlerter
 {
