@@ -26,7 +26,7 @@ EmailAlert::EmailAlert():emailSent(false)
 {}
 LEDAlert::LEDAlert():ledGlows(false)
 {}
-StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters): IAlertPTR()NULL //:emailAlertPTR(NULL), ledAlertPTR(NULL)
+StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters): IAlertPTR(NULL) //:emailAlertPTR(NULL), ledAlertPTR(NULL)
 {
     maxThreshold = MaxThreshold;
     IAlertPTR->first = Alerters.at(0);
