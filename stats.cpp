@@ -29,8 +29,8 @@ LEDAlert::LEDAlert():ledGlows(false)
 StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters): IAlertPTR(NULL) //:emailAlertPTR(NULL), ledAlertPTR(NULL)
 {
     maxThreshold = MaxThreshold;
-    IAlertPTR->first = Alerters.at(0);
-    IAlertPTR->second = Alerters.at(1);
+    IAlertPTR->(*first) = Alerters.at(0);
+    IAlertPTR->(*second) = Alerters.at(1);
     //emailAlertPTR = Alerters.at(0);
     //ledAlertPTR   = Alerters.at(1);
     
