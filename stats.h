@@ -19,16 +19,18 @@ class EmailAlert
 {
     public:
        EmailAlert();
-       bool emailSent;
+       //bool emailSent;
+       unsigned int emailSent:1 ;
 };
 class LEDAlert
 {
     public:
        LEDAlert();
-       bool ledGlows;
+       //bool ledGlows;
+       unsigned int ledGlows:1 ;
 };
 
-typedef int IAlerter;
+typedef unsigned int IAlerter;
 //typedef pair<EmailAlert*, LEDAlert*> IAlerter;
 
 class StatsAlerter
