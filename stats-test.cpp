@@ -5,7 +5,8 @@
 #include <cmath>
 using std::make_pair;
 
-TEST_CASE("reports average, minimum and maximum") {
+TEST_CASE("reports average, minimum and maximum")
+{
     std::vector<float> computedvalues;
     computedvalues.assign({1.525, 8.925, 3.125, 4.525});
     Statistics::Stats computedStats = Statistics::ComputeStatistics(computedvalues);
@@ -15,36 +16,24 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(std::abs(computedStats.min - 1.525) < epsilon);
 }
 
-TEST_CASE("average is NaN for empty array") {
-    //All fields of computedStats (average, max, min) must be
-    //NAN (not-a-number), as defined in math.h
-
-    //Design the REQUIRE statement here.
+TEST_CASE("average is NaN for empty array")
+{
     std::vector<float> vNumbers;
     Statistics::Stats computedStats = Statistics::ComputeStatistics(vNumbers);
     REQUIRE(isnan(computedStats.average));
     REQUIRE(isnan(computedStats.max));
     REQUIRE(isnan(computedStats.min));
-    //Use http://www.cplusplus.com/reference/cmath/isnan/
 }
 
-TEST_CASE("raises alerts when max is greater than threshold") {
+TEST_CASE("raises alerts when max is greater than threshold")
+{
     EmailAlert emailAlert;
     LEDAlert ledAlert;
-    //std::vector<IAlerter*> alerters;
-
-    //std::vector<IAlerter*> alerters(1, {&emailAlert, &ledAlert});
     IAlerter Alert;
+    
     Alert.emailAlert = &emailAlert;
     Alert.ledAlert = &ledAlert;
     std::vector<IAlerter*> alerters = {&Alert};
-    //std::vector<IAlerter*> alerters = {&emailAlert, &ledAlert};
-    //alerters.assign({&emailAlert, &ledAlert});
-    
-    //const std::vector<IAlerter*> alerters;
-    //alerters.insert(alerters.begin(), 1, make_pair(&emailAlert, &ledAlert));
-    //std::vector<IAlerter*> alerters;
-    //alerters.push_back(std::make_pair(&emailAlert,&ledAlert));
     
     const float maxThreshold = 10.2;
     StatsAlerter statsAlerter(maxThreshold, alerters);
