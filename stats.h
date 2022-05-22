@@ -4,7 +4,8 @@
 #include<cmath>
 using namespace std;
 
-namespace Statistics {
+namespace Statistics
+{
     class Stats
     {
         public:
@@ -20,6 +21,7 @@ struct EmailAlert
     EmailAlert();
     bool emailSent;
 };
+
 struct LEDAlert
 {
     LEDAlert();
@@ -32,17 +34,13 @@ struct IAlerter
    EmailAlert* emailAlert;
    LEDAlert* ledAlert;
 };
-//typedef unsigned int IAlerter;
-//typedef pair<EmailAlert*, LEDAlert*> IAlerter;
 
 class StatsAlerter
 {
     public:
        float maxThreshold;
        IAlerter* IAlertPTR;
-       //IAlerter* emailAlertPTR;
-       //IAlerter* ledAlertPTR;
-       //std::vector<IAlerter*> alerters;
+
        StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters);
        void checkAndAlert(const std::vector<float>& VctrNumbers);
 };
