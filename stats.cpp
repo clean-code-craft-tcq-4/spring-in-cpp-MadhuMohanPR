@@ -7,7 +7,7 @@ namespace Statistics
 Stats ComputeStatistics(const std::vector<float>& vNumbers)
 {
     Stats vElements;
-    if(!vNumbers.size())
+    if(vNumbers.size() == 0)
     {
        vElements.average = NAN;
        vElements.max     = NAN;
@@ -38,19 +38,32 @@ IAlerter::IAlerter():emailAlert(NULL), ledAlert(NULL)
 StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters): IAlertPTR(NULL)
 {
     maxThreshold = MaxThreshold;
-    IAlertPTR = Alerters.at(0);
+    if(Alerters.size() == 0)
+    {
+        cout<<"Vector Alerters is empty"<<endl;
+    }
+    else 
+    {
+       IAlertPTR = Alerters.at(0);
+    }
 }
 
 void StatsAlerter::checkAndAlert(const std::vector<float>& VctrNumbers)
 {
-    float max     = *max_element(VctrNumbers.begin(), VctrNumbers.end());
-    if(max > maxThreshold)
+    if(VctrNumbers.size() != 0)
     {
-        IAlertPTR->emailAlert->emailSent = true;
-        IAlertPTR->ledAlert->ledGlows = true;
-    }
+        float max     = *max_element(VctrNumbers.begin(), VctrNumbers.end());
+        if(max > maxThreshold)
+        {
+            IAlertPTR->emailAlert->emailSent = true;
+            IAlertPTR->ledAlert->ledGlows = true;
+        }
+        else
+        {
+            cout << "max is less than Threshold" <<endl;
+        }
     else
     {
-        cout << "max is less than Threshold" <<endl;
+        cout<<"VctrNumbers is empty"<<endl;
     }
 }
