@@ -62,6 +62,7 @@ void StatsAlerter::checkAndAlert(const std::vector<float>& VctrNumbers)
         {
             cout << "max is less than Threshold" <<endl;
         }
+    }
     else
     {
         cout<<"VctrNumbers is empty"<<endl;
