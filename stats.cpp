@@ -7,7 +7,7 @@ namespace Statistics
 Stats ComputeStatistics(const std::vector<float>& vNumbers)
 {
     Stats vElements;
-    if(vNumbers.size()==0)
+    if(!vNumbers.size())
     {
        vElements.average = NAN;
        vElements.max     = NAN;
@@ -38,7 +38,7 @@ IAlerter::IAlerter():emailAlert(NULL), ledAlert(NULL)
 StatsAlerter::StatsAlerter(float MaxThreshold, std::vector<IAlerter*> Alerters): IAlertPTR(NULL)
 {
     maxThreshold = MaxThreshold;
-    IAlertPTR = Alerters.begin();
+    IAlertPTR = Alerters.at(0);
 }
 
 void StatsAlerter::checkAndAlert(const std::vector<float>& VctrNumbers)
