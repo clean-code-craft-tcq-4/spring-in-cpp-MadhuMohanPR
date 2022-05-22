@@ -34,7 +34,9 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     //std::vector<IAlerter*> alerters;
 
     //std::vector<IAlerter*> alerters(1, {&emailAlert, &ledAlert});
-    IAlerter Alert = {&emailAlert, &ledAlert};
+    IAlerter Alert;
+    Alert.emailAlert(&emailAlert);
+    Alert.ledAlert(&ledAlert);
     std::vector<IAlerter*> alerters = {&Alert};
     //std::vector<IAlerter*> alerters = {&emailAlert, &ledAlert};
     //alerters.assign({&emailAlert, &ledAlert});
